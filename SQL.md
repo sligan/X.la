@@ -43,9 +43,9 @@ join Employees e_employee on e_employee.Employees_fk = em.PrimaryEmail;
 #### 1.5 Вывести процентное соотношение количества сотрудников в офисах
 ~~~sql
 select  
-       (select count(PrimaryEmail) from Employees where Location = Perm)::float / count(PrimaryEmail)::float * 100 as Perm_employees,  
-       (select count(PrimaryEmail) from Employees where Location = LA)::float / count(PrimaryEmail)::float * 100 as LA_employees,  
-       (select count(PrimaryEmail) from Employees where Location = Seoul)::float / count(PrimaryEmail)::float * 100 as Seoul_employees  
+       (select count(PrimaryEmail) from Employees where Location = 'Perm')::float / count(PrimaryEmail)::float * 100 as Perm_employees,  
+       (select count(PrimaryEmail) from Employees where Location = 'LA')::float / count(PrimaryEmail)::float * 100 as LA_employees,  
+       (select count(PrimaryEmail) from Employees where Location = 'Seoul')::float / count(PrimaryEmail)::float * 100 as Seoul_employees  
 from Employees;  
 ~~~
 
